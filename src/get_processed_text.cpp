@@ -7,6 +7,7 @@
              gavvs1977@yandex.ru
 */
 
+#include <cstdio>
 #include "../include/get_processed_text.h"
 #include "../include/char_conv.h"
 #include "../include/file_contents.h"

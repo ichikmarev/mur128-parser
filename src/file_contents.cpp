@@ -7,10 +7,11 @@
              gavvs1977@yandex.ru
 */
 
-#include "../include/file_contents.h"
-#include "../include/fsize.h"
 #include <cstdio>
 #include <memory>
+#include <boost/filesystem/operations.hpp>
+#include "../include/file_contents.h"
+#include "../include/fsize.h"
 
 class Binary_file{
 public:
@@ -23,9 +24,16 @@ private:
     FILE* fptr = 0;
 };
 
+namespace fs = boost::filesystem;
+
 Contents get_contents(const char* name)
 {
     Contents result = std::make_pair(Get_contents_return_code::Normal, "");
+    fs::path p{name};
+    if(!fs::exists(p)){
+        result.first = Get_contents_return_code::Impossible_open;
+        return result;
+    }
     Binary_file f {name};
     FILE* fptr = f.get();
     if(!fptr){

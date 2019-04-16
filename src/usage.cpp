@@ -15,10 +15,10 @@ static const char* usage_str =
 Copyright (c) Gavrilov V.S., 2019
 lynx-parser is a compiler of the educational programming language Lynx.
 
-This program is free sofwtware, and it is licensed under the GPLv3 license.
+This program is free software, and it is licensed under the GPLv3 license.
 There is NO warranty, not even MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Usage: %s test_file
+Usage: %s file
 )~";
 
 void usage(const char* program_name)
