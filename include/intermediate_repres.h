@@ -14,12 +14,14 @@
 #   include <quadmath.h>
 namespace lynx_ir{
     enum class Kind{
-        Module,     Type,      Type_definition, Simple_type,
-        Tuple,      Pointer,   Reference,       Function_ptr,
-        Array,      Enum,      Struct,          Algebraic_type,
-        Int_val,    Float_val, Complex_val,     Bool_val,
-        Char_val,   Str_val,   Argument_type,   Result_type,
-        Array_index
+        Module,            Type,           Type_definition,     Simple_type,
+        Tuple,             Pointer,        Reference,           Function_ptr,
+        Array,             Enum,           Struct,              Algebraic_type,
+        Int_val,           Float_val,      Complex_val,         Bool_val,
+        Char_val,          Str_val,        Argument_type,       Result_type,
+        Array_index,       Elem_type,      Enum_elem,           Struct_field,
+        Algebraic_variant, Variable,       Constant,            Function,
+        Assignment,        Conditional_op, Logical_or_op,       Logical_and_op
     };
 
     enum class Simple_type_kind{
@@ -31,9 +33,10 @@ namespace lynx_ir{
     };
 
     struct Args{
-        std::size_t first;
-        std::size_t second;
-        std::size_t third;
+        std::size_t first_;
+        std::size_t second_;
+        std::size_t third_;
+        std::size_t fourth_;
     };
 
     struct IR{
