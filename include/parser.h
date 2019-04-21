@@ -12,6 +12,7 @@
 #   include <memory>
 #   include "../include/errors_and_tries.h"
 #   include "../include/location.h"
+#   include "../include/intermediate_repres.h"
 namespace parser{
     class Parser{
     public:
@@ -21,6 +22,9 @@ namespace parser{
         Parser& operator = (const Parser& rhs);
 
         Parser(const ascaner::Location_ptr& location, const Errors_and_tries& et);
+
+        void compile(lynx_ir::Command& buffer);
+
     private:
         struct Impl;
         std::unique_ptr<Impl> pimpl_;
