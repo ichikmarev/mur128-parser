@@ -14,15 +14,22 @@
 #   include <quadmath.h>
 namespace lynx_ir{
     enum class Kind{
-        Module,            Type,           Type_definition,     Simple_type,
-        Tuple,             Pointer,        Reference,           Function_ptr,
-        Array,             Enum,           Struct,              Algebraic_type,
-        Value,             Argument_type,  Result_type,         Array_index,
-        Elem_type,         Enum_elem,      Struct_field,        Variable,
-        Constant,          Function,       Assignment,          Conditional_op,
-        Logical_or_op,     Logical_and_op, Logical_not_op,      Comparison_op,
-        Bitwise_or_op,     Bitwise_and_op, Bitwise_not,         Addition_op,
-        Multiplication_op, Power_op,       Sharp_op
+        Module,            Type,                Type_definition,     Simple_type,
+        Tuple,             Pointer,             Reference,           Function_ptr,
+        Array,             Enum,                Struct,              Algebraic_type,
+        Value,             Argument_type,       Result_type,         Array_index,
+        Elem_type,         Enum_elem,           Struct_field,        Variable,
+        Constant,          Function,            Assignment,          Conditional_op,
+        Logical_or_op,     Logical_and_op,      Logical_not_op,      Comparison_op,
+        Bitwise_or_op,     Bitwise_and_op,      Bitwise_not,         Addition_op,
+        Multiplication_op, Power_op,            Sharp_op,            Inc_dec_op,
+        Unary_pm_op,       Address,             Data_address,        Size_of,
+        Data_size,         New,                 Array_new,           Delete,
+        Array_delete,      Void_val,            Array_val,           Struct_val,
+        IF_stmt,           IF_branch,           Switch_stmt,         Switch_branch,
+        Switch_branch_val, Switch_branch_range, Match_stmt,          Match_branch,
+        While,             Do_while,            Forever,             For,
+        For_var_values
     };
 
     enum class Simple_type_kind{
@@ -89,13 +96,6 @@ namespace lynx_ir{
         Add, Float_add, Sub, Float_sub
     };
 
-    enum class Attribute_kind{
-        Value,          Simple_type,       Enum_elem_code, Field_size,
-        Func_attr,      Logical_or_op,     Conditional_op, Assignment_op,
-        Logical_and_op, Comparison_op,     Bitwise_or_op,  Bitwise_and_op,
-        Addition_op,    Multiplication_op, Power_op
-    };
-
     enum class Multiplication_op_kind{
         Mul, Float_mul,
         Div, Float_div,
@@ -104,6 +104,22 @@ namespace lynx_ir{
 
     enum class Power_op_kind{
         Power, Float_power
+    };
+
+    enum class Inc_dec_op_kind{
+        Inc, Inc_with_wrapping, Dec, Dec_with_wrapping
+    };
+
+    enum class Unary_pm_op_kind{
+        Unary_plus, Unary_minus
+    };
+
+    enum class Attribute_kind{
+        Value,          Simple_type,       Enum_elem_code, Field_size,
+        Func_attr,      Logical_or_op,     Conditional_op, Assignment_op,
+        Logical_and_op, Comparison_op,     Bitwise_or_op,  Bitwise_and_op,
+        Addition_op,    Multiplication_op, Power_op,       Inc_dec_op,
+        Unary_pm_op
     };
 
     struct Attribute{
@@ -125,6 +141,8 @@ namespace lynx_ir{
             Addition_op_kind       addition_op_kind_;
             Multiplication_op_kind multiplication_op_kind_;
             Power_op_kind          power_op_kind_;
+            Inc_dec_op_kind        inc_dec_op_kind_;
+            Unary_pm_op_kind       unary_pm_op_kind_;
         };
     };
 
