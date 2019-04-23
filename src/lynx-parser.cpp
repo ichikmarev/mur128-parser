@@ -16,6 +16,8 @@
 #include "../include/errors_and_tries.h"
 #include "../include/error_count.h"
 #include "../include/char_trie.h"
+#include "../include/parser.h"
+#include "../include/intermediate_repres.h"
 
 enum Exit_codes{
     Success, No_args, File_processing_error
@@ -33,12 +35,17 @@ int main(int argc, char* argv[])
         return File_processing_error;
     }
 
-    char32_t*         p      = const_cast<char32_t*>(text.c_str());
-    auto              loc    = std::make_shared<ascaner::Location>(p);
+    char32_t*         p          = const_cast<char32_t*>(text.c_str());
+    auto              loc        = std::make_shared<ascaner::Location>(p);
     Errors_and_tries  et;
-    et.ec_                   = std::make_shared<Error_count>();
-    et.ids_trie_             = std::make_shared<Char_trie>();
-    et.strs_trie_            = std::make_shared<Char_trie>();
+    et.ec_                       = std::make_shared<Error_count>();
+    et.ids_trie_                 = std::make_shared<Char_trie>();
+    et.strs_trie_                = std::make_shared<Char_trie>();
+
+    auto              parser_ptr = std::make_shared<parser::Parser>(loc, et);
+
+    lynx_ir::Command  buffer;
+    parser_ptr->compile(buffer);
 
     return Success;
 }
