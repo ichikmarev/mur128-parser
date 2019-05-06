@@ -1,33 +1,29 @@
 /*
-    File:    lynx_scaner.cpp
-    Created: 10 February 2019 at 16:25 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    File:    mur128m_scaner.cpp
+    Author:  Ilya Chikmarev
 */
 
 #include <string>
 #include <cstdio>
 #include <quadmath.h>
-#include "../include/lynx_scaner.h"
-#include "../include/lynx_lexeme.h"
+#include "../include/mur128m_scaner.h"
+#include "../include/mur128m_lexeme.h"
 #include "../include/knuth_find.h"
 #include "../include/belongs.h"
 #include "../include/search_char.h"
 #include "../include/mysize.h"
-#include "../include/lynx_scaner_keyword_table.h"
+#include "../include/mur128m_scaner_keyword_table.h"
 #include "../include/keyword_init_table.h"
 #include "../include/get_init_state.h"
 #include "../include/print_char32.h"
 #include "../include/idx_to_string.h"
 #include "../include/digit_to_int.h"
 #include "../include/float128_to_string.h"
-#include "../include/lynx_scaner_delimiter_table.h"
+#include "../include/mur128m_scaner_delimiter_table.h"
 #include "../include/delimiter_init_table.h"
 #include "../include/int128_to_str.h"
 
-namespace lynx_scanner{
+namespace mur128m_scanner{
     static const Segment_with_value<char32_t, uint64_t> categories_table[] = {
         {{U'a', U'a'},  4108      },    {{U'2', U'7'},  1093640   },
         {{U'б', U'е'},  28        },    {{U'(', U'*'},  32        },
@@ -1555,7 +1551,7 @@ namespace lynx_scanner{
         }
     }
 
-    ascaner::Token<lynx_scanner::Lexeme_info> Scanner::current_lexeme()
+    ascaner::Token<mur128m_scanner::Lexeme_info> Scanner::current_lexeme()
     {
         automaton_           = Automaton_name::Start;
         token_.lexeme_.code_ = Lexem_code::Nothing;
@@ -1695,7 +1691,7 @@ namespace lynx_scanner{
         "Maybe_component_or",          "Comma"
     };
 
-    std::string Scanner::lexeme_to_string(const lynx_scanner::Lexeme_info& li)
+    std::string Scanner::lexeme_to_string(const mur128m_scanner::Lexeme_info& li)
     {
         std::string result;
         auto        lc     = li.code_;

@@ -1,16 +1,12 @@
 /*
     File:    delimiter_init_table.cpp
-    Created: 26 March 2019 at 11:28 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include "../include/delimiter_init_table.h"
 #include "../include/mysize.h"
 
-namespace lynx_scanner{
+namespace mur128m_scanner{
     const State_for_char delimiter_init_table[] = {
         {23,  U'!'}, {53,  U'#'}, {77,  U'%'},
         {87,  U'&'}, {2,   U'('}, {10,  U')'},

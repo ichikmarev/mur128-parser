@@ -1,10 +1,6 @@
 /*
-     File:    lynx-parser.cpp
-     Created: 16 April 2019 at 06:50 Moscow time.
-     Author:  Гаврилов Владимир Сергеевич
-     E-mails: vladimir.s.gavrilov@gmail.com
-              gavrilov.vladimir.s@mail.ru
-              gavvs1977@yandex.ru
+     File:    mur128m-parser.cpp
+     Author:  Ilya Chikmarev
 */
 
 #include <string>
@@ -44,7 +40,7 @@ int main(int argc, char* argv[])
 
     auto              parser_ptr = std::make_shared<parser::Parser>(loc, et);
 
-    lynx_ir::Command  buffer;
+    mur128m_ir::Command  buffer;
     parser_ptr->compile(buffer);
 
     return Success;

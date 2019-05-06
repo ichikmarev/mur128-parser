@@ -1,10 +1,6 @@
 /*
     File:    char_trie.cpp
-    Created: 06 November 2016 at 12:20 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #   include <vector>

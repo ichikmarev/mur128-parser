@@ -1,10 +1,6 @@
 /*
     File:    int128_to_str.cpp
-    Created: 27 March 2019 at 09:02 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include "../include/int128_to_str.h"

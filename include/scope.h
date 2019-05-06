@@ -1,10 +1,6 @@
 /*
     File:    scope.h
-    Created: 22 April 2019 at 17:20 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef SCOPE_H
@@ -17,7 +13,7 @@
 #   include <boost/variant.hpp>
 #   include <forward_list>
 #   include <memory>
-namespace lynx_scope{
+namespace mur128m_scope{
     enum class Name_kind : std::uint16_t{
         Variable,     Function,     Type,
         Enum,         Struct,       Enum_elem,

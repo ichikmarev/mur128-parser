@@ -1,10 +1,6 @@
 /*
     File:    print_char32.cpp
-    Created: 19 January 2017 at 10:40 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include <string>

@@ -1,16 +1,12 @@
 /*
     File:    scope.cpp
-    Created: 22 April 2019 at 20:40 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include <tuple>
 #include "../include/scope.h"
 
-namespace lynx_scope{
+namespace mur128m_scope{
    bool operator < (const Name_occurence& first, const Name_occurence& second)
     {
         return std::tie(first.index_of_definition_,  first.attribute_,  first.kind_)     <

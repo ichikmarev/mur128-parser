@@ -1,10 +1,6 @@
 /*
     File:    parser.h
-    Created: 16 April 2019 at 08:41 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef PARSER_H
@@ -23,7 +19,7 @@ namespace parser{
 
         Parser(const ascaner::Location_ptr& location, const Errors_and_tries& et);
 
-        void compile(lynx_ir::Command& buffer);
+        void compile(mur128m_ir::Command& buffer);
 
     private:
         struct Impl;

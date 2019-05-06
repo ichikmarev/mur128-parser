@@ -1,10 +1,6 @@
 /*
     File:    mysize.h
-    Created: 09 February 2019 at 21:30 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef MYSIZE_H

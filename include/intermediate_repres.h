@@ -1,10 +1,6 @@
 /*
     File:    intermediate_repres.h
-    Created: 21 April 2019 at 09:12 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef INTERMEDIATE_REPRES_H
@@ -12,7 +8,7 @@
 #   include <cstddef>
 #   include <vector>
 #   include <quadmath.h>
-namespace lynx_ir{
+namespace mur128m_ir{
     enum class Kind{
         Module,            Type,                Type_definition,     Simple_type,
         Tuple,             Pointer,             Reference,           Function_ptr,

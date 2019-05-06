@@ -1,15 +1,11 @@
 /*
-    File:    lynx_scaner_delimiter_table.cpp
-    Created: 25 March 2019 at 17:35 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    File:    mur128m_scaner_delimiter_table.cpp
+    Author:  Ilya Chikmarev
 */
 
-#include "../include/lynx_scaner_delimiter_table.h"
+#include "../include/mur128m_scaner_delimiter_table.h"
 
-namespace lynx_scanner{
+namespace mur128m_scanner{
     const trans_table::Elem<Lexem_code> delimiters_jump_table[] = {
         {const_cast<char32_t*>(U":"),      Lexem_code::Sq_br_opened,                 1}, // 0:   [
         {const_cast<char32_t*>(U""),       Lexem_code::Sq_br_colon_opened,           0}, // 1:   [:

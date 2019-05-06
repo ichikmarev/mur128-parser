@@ -1,17 +1,13 @@
 /*
     File:    parser.cpp
-    Created: 21 April 2019 at 09:50 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include <cstdio>
 #include "../include/parser.h"
 #include "../include/scope.h"
-#include "../include/lynx_scaner.h"
-#include "../include/lynx_lexeme.h"
+#include "../include/mur128m_scaner.h"
+#include "../include/mur128m_lexeme.h"
 #include "../include/abstract_scaner.h"
 
 namespace parser{
@@ -25,19 +21,19 @@ namespace parser{
         Impl(const ascaner::Location_ptr& location, const Errors_and_tries& et) :
             location_{location},
             et_{et},
-            symbol_table_{std::make_shared<lynx_scope::Symbol_table>()},
-            scanner_{std::make_shared<lynx_scanner::Scanner>(location, et)}
+            symbol_table_{std::make_shared<mur128m_scope::Symbol_table>()},
+            scanner_{std::make_shared<mur128m_scanner::Scanner>(location, et)}
             {}
 
-        void compile(lynx_ir::Command& buffer);
+        void compile(mur128m_ir::Command& buffer);
 
     private:
         ascaner::Location_ptr                     location_;
         Errors_and_tries                          et_;
-        std::shared_ptr<lynx_scope::Symbol_table> symbol_table_;
-        std::shared_ptr<lynx_scanner::Scanner>    scanner_;
+        std::shared_ptr<mur128m_scope::Symbol_table> symbol_table_;
+        std::shared_ptr<mur128m_scanner::Scanner>    scanner_;
 
-        lynx_ir::Command                          buffer_;
+        mur128m_ir::Command                          buffer_;
 
         /**
          * Processing of all rules of a grammar of the programming language Рысь
@@ -89,7 +85,7 @@ namespace parser{
         puts("We are in a function for the non-terminal \'program\'.");
 #endif
         Program_state state = Program_state::A;
-        using namespace lynx_scanner;
+        using namespace mur128m_scanner;
         Lynx_token  ltok;
         Lexeme_info li;
         Lexem_code  lc;
@@ -116,7 +112,7 @@ namespace parser{
 #endif
     }
 
-    void Parser::Impl::compile(lynx_ir::Command& buffer)
+    void Parser::Impl::compile(mur128m_ir::Command& buffer)
     {
         buffer_.clear();
         program();
@@ -127,7 +123,7 @@ namespace parser{
     {
     }
 
-    void Parser::compile(lynx_ir::Command& buffer)
+    void Parser::compile(mur128m_ir::Command& buffer)
     {
         pimpl_->compile(buffer);
     }

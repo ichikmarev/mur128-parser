@@ -1,19 +1,15 @@
 /*
     File:    usage.cpp
-    Created: 11 March 2019 at 19:31 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include <cstdio>
 #include "../include/usage.h"
 
 static const char* usage_str =
-    R"~(lynx-scanner
+    R"~(mur128m-scanner
 Copyright (c) Gavrilov V.S., 2019
-lynx-parser is a compiler of the educational programming language Lynx.
+mur128m-parser is a compiler of the educational programming language Lynx.
 
 This program is free software, and it is licensed under the GPLv3 license.
 There is NO warranty, not even MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

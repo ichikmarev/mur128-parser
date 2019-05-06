@@ -1,10 +1,6 @@
 /*
     File:    elem.h
-    Created: 23 March 2018 at 15:35 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef ELEM_H

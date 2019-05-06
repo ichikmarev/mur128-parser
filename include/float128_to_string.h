@@ -1,10 +1,6 @@
 /*
     File:    float128_to_string.h
-    Created: 21 March 2019 at 14:28 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #ifndef FLOAT128_TO_STRING_H

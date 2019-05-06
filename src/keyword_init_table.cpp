@@ -1,16 +1,12 @@
 /*
     File:    keyword_init_table.cpp
-    Created: 10 February 2019 at 10:49 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
+    Author:  Ilya Chikmarev
 */
 
 #include "../include/keyword_init_table.h"
 #include "../include/mysize.h"
 
-namespace lynx_scanner{
+namespace mur128m_scanner{
     const State_for_char keyword_init_table[] = {
         {0,   U'б'}, {20,  U'в'}, {56,  U'г'},
         {64,  U'д'}, {67,  U'е'}, {71,  U'и'},

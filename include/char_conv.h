@@ -1,10 +1,6 @@
 /*
      File:    char_conv.h
-     Created: 28 January 2016.
-     Author:  Гаврилов Владимир Сергеевич
-     E-mails: vladimir.s.gavrilov@gmail.com
-              gavrilov.vladimir.s@mail.ru
-              gavvs1977@yandex.ru
+     Author:  Ilya Chikmarev
 */
 
 #ifndef CHAR_CONV_H
