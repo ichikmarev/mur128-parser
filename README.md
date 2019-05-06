@@ -1,1 +1,1 @@
-A parser of the programming language Рысь.
+Парсер для учебного процессора МУР128М
