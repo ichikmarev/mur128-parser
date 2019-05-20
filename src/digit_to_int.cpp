@@ -1,6 +1,6 @@
 /*
     File:    digit_to_int.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/digit_to_int.h"

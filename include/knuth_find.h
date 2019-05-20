@@ -1,6 +1,6 @@
 /*
     File:    knuth_find.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef KNUTH_FIND_H

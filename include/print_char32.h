@@ -1,6 +1,6 @@
 /*
     File:    print_char32.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 #ifndef PRINT_CHAR32_H
 #define PRINT_CHAR32_H

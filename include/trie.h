@@ -1,6 +1,6 @@
 /*
     File:    trie.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef TRIE_H

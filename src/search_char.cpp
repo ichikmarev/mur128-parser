@@ -1,6 +1,6 @@
 /*
     File:    search_char.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/search_char.h"

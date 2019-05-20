@@ -1,6 +1,6 @@
 /*
     File:    belongs.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef BELONGS_H

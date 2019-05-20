@@ -1,6 +1,6 @@
 /*
     File:    float128_to_string.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include <quadmath.h>

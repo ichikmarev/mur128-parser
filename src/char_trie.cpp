@@ -1,6 +1,6 @@
 /*
     File:    char_trie.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #   include <vector>

@@ -1,6 +1,6 @@
 /*
     File:    position.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef POSITION_H

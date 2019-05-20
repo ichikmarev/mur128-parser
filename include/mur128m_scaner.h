@@ -1,14 +1,14 @@
 /*
     File:    mur128m_scaner.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
-#ifndef MUR128M_SCANER_H
-#define MUR128M_SCANER_H
+#ifndef mur128m_SCANER_H
+#define mur128m_SCANER_H
 #   include "../include/mur128m_lexeme.h"
 #   include "../include/abstract_scaner.h"
 #   include "../include/category.h"
 namespace mur128m_scanner{
-    using Lynx_token = ascaner::Token<mur128m_scanner::Lexeme_info>;
+    using mur128m_token = ascaner::Token<mur128m_scanner::Lexeme_info>;
 
     class Scanner : public ascaner::Abstract_scaner<mur128m_scanner::Lexeme_info>{
     public:

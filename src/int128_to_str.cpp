@@ -1,6 +1,6 @@
 /*
     File:    int128_to_str.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/int128_to_str.h"

@@ -1,6 +1,6 @@
 /*
     File:    category.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef CATEGORY_H

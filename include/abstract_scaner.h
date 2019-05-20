@@ -1,6 +1,6 @@
 /*
     File:    abstract_scaner.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef ABSTRACT_SCANER_H

@@ -1,6 +1,6 @@
 /*
     File:    search_char.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef SEARCH_CHAR_H

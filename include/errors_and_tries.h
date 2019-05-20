@@ -1,6 +1,6 @@
 /*
     File:    errors_and_tries.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef ERRORS_AND_TRIES_H

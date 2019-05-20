@@ -1,9 +1,8 @@
 /*
     File:    get_processed_text.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
-#include <cstdio>
 #include "../include/get_processed_text.h"
 #include "../include/char_conv.h"
 #include "../include/file_contents.h"

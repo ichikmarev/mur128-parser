@@ -1,6 +1,6 @@
 /*
     File:    fsize.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef FSIZE_H

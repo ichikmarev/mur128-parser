@@ -1,6 +1,6 @@
 /*
     File:    float128_to_string.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef FLOAT128_TO_STRING_H

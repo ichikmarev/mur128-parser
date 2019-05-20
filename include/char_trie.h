@@ -1,6 +1,6 @@
 /*
     File:    char_trie.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 #ifndef CHAR_TRIE_H
 #define CHAR_TRIE_H

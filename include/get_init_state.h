@@ -1,6 +1,6 @@
 /*
     File:    get_init_state.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef GET_INIT_STATE_H

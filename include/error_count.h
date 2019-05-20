@@ -1,6 +1,6 @@
 /*
     File:    error_count.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef ERROR_COUNT_H

@@ -1,6 +1,6 @@
 /*
     File:    state_for_char.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef STATE_FOR_CHAR_H
