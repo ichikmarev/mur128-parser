@@ -1,6 +1,6 @@
 /*
     File:    get_processed_text.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 #ifndef GET_PROCESSED_TEXT_H
 #define GET_PROCESSED_TEXT_H

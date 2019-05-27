@@ -1,6 +1,6 @@
 /*
     File:    int128_to_str.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef INT128_TO_STR_H

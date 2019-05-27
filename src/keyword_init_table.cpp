@@ -1,6 +1,6 @@
 /*
     File:    keyword_init_table.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/keyword_init_table.h"
@@ -8,12 +8,12 @@
 
 namespace mur128m_scanner{
     const State_for_char keyword_init_table[] = {
-        {0,   U'б'}, {20,  U'в'}, {56,  U'г'},
-        {64,  U'д'}, {67,  U'е'}, {71,  U'и'},
-        {83,  U'к'}, {100, U'л'}, {112, U'м'},
-        {130, U'н'}, {135, U'о'}, {147, U'п'},
-        {172, U'р'}, {178, U'с'}, {198, U'т'},
-        {202, U'ф'}, {209, U'ц'}, {221, U'ч'}
+        {2,   U'a'}, {0,   U'b'}, {13,  U'c'},
+        {53,  U'd'}, {66,  U'f'}, {106, U'i'},
+        {86,  U'j'}, {138, U'l'}, {196, U'm'},
+        {145, U'n'}, {131, U'o'}, {190, U'p'},
+        {152, U'r'}, {184, U's'}, {148, U't'},
+        {118, U'u'}, {134, U'x'}
     };
 
     const std::size_t    keyword_init_table_size = size(keyword_init_table);

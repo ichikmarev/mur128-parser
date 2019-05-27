@@ -1,6 +1,6 @@
 /*
     File:    delimiter_init_table.h
-    Author:  Ilya Chikmarev
+  Author:  Chikmarev Ilya
 */
 
 #ifndef DELIMITER_INIT_TABLE_H

@@ -1,6 +1,6 @@
 /*
     File:    idx_to_string.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/idx_to_string.h"

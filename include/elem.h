@@ -1,6 +1,6 @@
 /*
     File:    elem.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef ELEM_H

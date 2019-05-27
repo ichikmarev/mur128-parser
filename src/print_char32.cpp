@@ -1,6 +1,6 @@
 /*
     File:    print_char32.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include <string>

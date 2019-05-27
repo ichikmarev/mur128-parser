@@ -1,6 +1,6 @@
 /*
     File:    location.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef LOCATION_H

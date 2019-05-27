@@ -1,6 +1,6 @@
 /*
     File:    keyword_init_table.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef KEYWORD_INIT_TABLE_H

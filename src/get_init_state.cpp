@@ -1,6 +1,6 @@
 /*
     File:    get_init_state.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/get_init_state.h"

@@ -1,6 +1,6 @@
 /*
     File:    usage.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef USAGE_H

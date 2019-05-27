@@ -1,6 +1,6 @@
 /*
     File:    mysize.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef MYSIZE_H

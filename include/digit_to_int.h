@@ -1,6 +1,6 @@
 /*
     File:    digit_to_int.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef DIGIT_TO_INT_H

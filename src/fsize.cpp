@@ -1,6 +1,6 @@
 /*
     File:    fsize.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include "../include/fsize.h"

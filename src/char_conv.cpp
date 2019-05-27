@@ -1,6 +1,6 @@
 /*
      File:    char_conv.cpp
-     Author:  Ilya Chikmarev
+     Author:  Chikmarev Ilya
 */
 
 #include "../include/char_conv.h"

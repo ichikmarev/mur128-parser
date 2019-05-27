@@ -1,6 +1,6 @@
 /*
      File:    char_conv.h
-     Author:  Ilya Chikmarev
+     Author:  Chikmarev Ilya
 */
 
 #ifndef CHAR_CONV_H

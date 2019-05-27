@@ -1,6 +1,6 @@
 /*
     File:    usage.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include <cstdio>
@@ -9,12 +9,13 @@
 static const char* usage_str =
     R"~(mur128m-scanner
 Copyright (c) Gavrilov V.S., 2019
-mur128m-parser is a compiler of the educational programming language Lynx.
+mur128m-scanner is a program for a testing of lexical analysis of the educational
+programming language mur128m.
 
-This program is free software, and it is licensed under the GPLv3 license.
+This program is free sofwtware, and it is licensed under the GPLv3 license.
 There is NO warranty, not even MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Usage: %s file
+Usage: %s test_file
 )~";
 
 void usage(const char* program_name)

@@ -1,6 +1,6 @@
 /*
     File:    file_contents.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef FILE_CONTENTS_H

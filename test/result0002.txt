@@ -1,0 +1,2 @@
+We are in a function for the non-terminal 'program'.
+End of processing.

@@ -1,6 +1,6 @@
 /*
     File:    idx_to_string.h
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #ifndef IDX_TO_STRING_H

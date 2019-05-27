@@ -1,6 +1,6 @@
 /*
     File:    error_count.cpp
-    Author:  Ilya Chikmarev
+    Author:  Chikmarev Ilya
 */
 
 #include <cstdio>
