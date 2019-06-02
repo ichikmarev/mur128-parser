@@ -10,21 +10,17 @@
 #include "../include/expr_scaner.h"
 
 enum Rule : uint8_t{
-    S_is_pTq, T_is_TbE,     T_is_E,
-    E_is_EF,  E_is_F,       F_is_Gc,
-    F_is_G,   G_is_Ha,      G_is_H,
-    H_is_d,   H_is_LP_T_RP
+    S_is_tQ, T_is_TbE,     T_is_E,
+    E_is_EQ,
 };
 
 enum class Non_terminal : uint8_t{
-    Nt_S, Nt_T, Nt_E,
-    Nt_F, Nt_G, Nt_H
+    Nt_S, Nt_T, Nt_E
 };
 
 enum class Terminal{
     End_of_text, Term_a,  Term_b,
-    Term_c,      Term_d,  Term_p,
-    Term_q,      Term_LP, Term_RP
+    Term_c, Term_d, Term_q, Term_l
 };
 
 using Expr_grammar_traits = Grammar_traits<Terminal, Non_terminal, Rule, 3>;
