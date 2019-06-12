@@ -10,44 +10,33 @@
 #   include <quadmath.h>
 namespace mur128m_ir{
     enum class Kind{
-        Module,            Type,                Type_definition,     Simple_type,
-        Tuple,             Pointer,             Reference,           Function_ptr,
-        Array,             Enum,                Struct,              Algebraic_type,
-        Value,             Argument_type,       Result_type,         Array_index,
-        Elem_type,         Enum_elem,           Struct_field,        Variable,
-        Constant,          Function,            Assignment,          Conditional_op,
+        Program,           Section,             Value,               MachineCommand,
         Logical_or_op,     Logical_and_op,      Logical_not_op,      Comparison_op,
         Bitwise_or_op,     Bitwise_and_op,      Bitwise_not,         Addition_op,
         Multiplication_op, Power_op,            Sharp_op,            Inc_dec_op,
         Unary_pm_op,       Address,             Data_address,        Size_of,
-        Data_size,         New,                 Array_new,           Delete,
-        Array_delete,      Void_val,            Array_val,           Struct_val,
-        IF_stmt,           IF_branch,           Switch_stmt,         Switch_branch,
-        Switch_branch_val, Switch_branch_range, Match_stmt,          Match_branch,
-        While,             Do_while,            Forever,             For,
-        For_var_values
+    };
+
+    enum class Section_type_kind{
+        Section_start, section_attr
     };
 
     enum class Simple_type_kind{
-        Bool8,    Bool16,    Bool32,  Bool64,
-        Int8,     Int16,     Int32,   Int64,
-        Int128,   Float32,   Float64, Float80,
-        Float128, Complex32, Char,    String,
+        Int8,      Int16,      Int32,     Int64,
+        Int128,    Float32,    Float64,   Float80,
+        Float128,  UInt8,      UInt16,    UInt32,
+        UInt64,    UInt128,    Complex32, Complex64,
+        Complex80, Complex128, Char,      String,
         Void
     };
 
     enum class Value_kind{
-        Int_val,           Float_val,      Complex_val,
-        Bool_val,          Char_val,       Str_val
-    };
-
-    enum class Function_attr_kind{
-        Main, Pure, Ordinary
+        Int_val,           Float_val,      Complex_val, Char_val,
+        Str_val
     };
 
     enum class Logical_or_op_kind{
-        Logical_or,          Logical_or_not, Logical_or_full,
-        Logical_or_not_full, Logical_xor
+        Logical_or,          Logical_or_not,        Logical_xor
     };
 
     enum class Conditional_op_kind{
@@ -59,14 +48,10 @@ namespace mur128m_ir{
         Mul_assign,                  Div_assign,              Remainder_assign,
         Copy,                        Bitwise_or_assign,       Bitwise_and_assign,
         Bitwise_xor_assign,          Logical_or_full,         Logical_and_full,
-        Float_plus_assign,           Float_minus_assign,      Float_mul_assign,
-        Float_div_assign,            Float_remainder_assign,  Logical_or_assign,
         Logical_and_assign,          Logical_xor_assign,      Power_assign,
         Left_shift_assign,           Right_shift_assign,      Bitwise_or_not_assign,
         Bitwise_and_not_assign,      Logical_or_not_full,     Logical_and_not_full,
         Logical_or_full_assign,      Logical_and_full_assign, Float_power_assign,
-        Logical_or_not_assign,       Logical_and_not_assign,  Logical_or_not_full_assign,
-        Logical_and_not_full_assign
     };
 
     enum class Logical_and_op_kind{
@@ -93,17 +78,13 @@ namespace mur128m_ir{
     };
 
     enum class Multiplication_op_kind{
-        Mul, Float_mul,
-        Div, Float_div,
-        Mod, Float_mod
+        Mul,
+        Div,
+        Mod,
     };
 
     enum class Power_op_kind{
-        Power, Float_power
-    };
-
-    enum class Inc_dec_op_kind{
-        Inc, Inc_with_wrapping, Dec, Dec_with_wrapping
+        Power
     };
 
     enum class Unary_pm_op_kind{
@@ -112,10 +93,7 @@ namespace mur128m_ir{
 
     enum class Attribute_kind{
         Value,          Simple_type,       Enum_elem_code, Field_size,
-        Func_attr,      Logical_or_op,     Conditional_op, Assignment_op,
-        Logical_and_op, Comparison_op,     Bitwise_or_op,  Bitwise_and_op,
-        Addition_op,    Multiplication_op, Power_op,       Inc_dec_op,
-        Unary_pm_op
+        Func_attr,      Logical_or_op,     Conditional_op, Assignment_op
     };
 
     struct Attribute{
@@ -138,7 +116,6 @@ namespace mur128m_ir{
             Multiplication_op_kind multiplication_op_kind_;
             Power_op_kind          power_op_kind_;
             Inc_dec_op_kind        inc_dec_op_kind_;
-            Unary_pm_op_kind       unary_pm_op_kind_;
         };
     };
 
@@ -152,15 +129,7 @@ namespace mur128m_ir{
 
     struct IR{
         Kind kind_;
-        union{
-            Args              args_;
-            unsigned __int128 int_val_;
-            __float128        float_val_;
-            __complex128      complex_val_;
-            char32_t          char_val_;
-            std::size_t       str_index_;
-            bool              bool_val_;
-        };
+        Attribute attr_;
     };
 
     using Command = std::vector<IR>;
