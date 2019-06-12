@@ -10,11 +10,20 @@
 namespace mur128m_scanner{
     enum class Lexem_code : uint16_t{
         Nothing,                     UnknownLexem,
-        Section,                     Readable,
-        Writable,                    Executable,
+        KwSection,                   KwReadable,
+        KwWritable,                  KwExecutable,
         Id,                          Integer,
-        Float32,                     Float64,
+        KwFloat32,                   KwFloat64,
+        KwFloat80,                   KwFloat128,
+	KwInt32,                     KwInt64,
+        KwInt128,		     KwInt8,
+	KwInt16,		     KwUInt32,
+        KwUInt64,		     KwUInt128,
+	KwUInt8,		     KwUInt16,
+	Float32,                     Float64,
         Float80,                     Float128,
+	KwComplex32,                 KwComplex64,
+        KwComplex80,                 KwComplex128,
         Complex32,                   Complex64,
         Complex80,                   Complex128,
         String,                      Char,
@@ -28,7 +37,9 @@ namespace mur128m_scanner{
         Remainder,                   Bitwise_or,
         Bitwise_and,                 Greater_than,
         Right_shift,                 Curly_brace_opened,
-        Curly_brace_closed,          Comma
+        Curly_brace_closed,          Comma,
+	Register,		     KwChar,
+	KwFormat,		     KwString
     };
 
     struct Lexeme_info{

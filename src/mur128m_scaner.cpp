@@ -24,26 +24,25 @@
 #include "../include/int128_to_str.h"
 
 namespace mur128m_scanner{
-  static const Segment_with_value<char32_t, uint64_t> categories_table[] = {
-      {{U'b', U'b'},  4380      },    {{U'8', U'9'},  1085448   },  {{U'r', U'u'},  28        },
-      {{U'+', U'+'},  262176    },    {{U'O', U'O'},  524       },  {{U'l', U'n'},  28        },
-      {{U'{', U'~'},  32        },    {{U'$', U'$'},  2048      },  {{U'/', U'/'},  32        },
-      {{U'C', U'D'},  4108      },    {{U'[', U'['},  32        },  {{U'f', U'f'},  528412    },
-      {{U'p', U'p'},  28        },    {{U'x', U'x'},  524444    },  {{U'А', U'я'},  12        },
-      {{U'!', U'!'},  32        },    {{U'\'', U'\''},  1024      },  {{U'-', U'-'},  262176    },
-      {{U'1', U'1'},  1110024   },    {{U'A', U'A'},  4108      },  {{U'F', U'F'},  4108      },
-      {{U'X', U'X'},  140       },    {{U'_', U'_'},  12        },  {{U'd', U'd'},  528412    },
-      {{U'i', U'j'},  28        },    {{U'o', U'o'},  540       },  {{U'q', U'q'},  524300    },
-      {{U'v', U'w'},  12        },    {{U'y', U'z'},  12        },  {{U'Ё', U'Ё'},  12        },
-      {{U'ё', U'ё'},  12        },   {{   1,   32},  1         },  {{U'"', U'"'},  64        },
-      {{U'%', U'&'},  32        },    {{U'(', U'*'},  32        },  {{U',', U','},  32        },
-      {{U'.', U'.'},  2097152   },    {{U'0', U'0'},  126984    },  {{U'2', U'7'},  1093640   },
-      {{U':', U'>'},  32        },    {{U'B', U'B'},  4364      },  {{U'E', U'E'},  135180    },
-      {{U'G', U'N'},  12        },    {{U'P', U'W'},  12        },  {{U'Y', U'Z'},  12        },
-      {{U']', U'^'},  32        },    {{U'a', U'a'},  4124      },  {{U'c', U'c'},  4124      },
-      {{U'e', U'e'},  135180    },    {{U'g', U'h'},  12        },  {{U'k', U'k'},  12        }
-  };
-
+    static const Segment_with_value<char32_t, uint64_t> categories_table[] = {
+    	{{U'b', U'b'},  4380      },    {{U'8', U'9'},  1085448   },  {{U'r', U'u'},  28        },    
+    	{{U'+', U'+'},  262176    },    {{U'O', U'O'},  524       },  {{U'l', U'n'},  28        },    
+    	{{U'{', U'~'},  32        },    {{U'$', U'$'},  2048      },  {{U'/', U'/'},  32        },    
+    	{{U'C', U'D'},  4108      },    {{U'[', U'['},  32        },  {{U'f', U'f'},  528412    },    
+    	{{U'p', U'p'},  28        },    {{U'x', U'x'},  524444    },  {{U'А', U'я'},  12        },  
+    	{{U'!', U'!'},  32        },    {{U'\'', U'\''},  1024      },  {{U'-', U'-'},  262176    },    
+    	{{U'1', U'1'},  1110024   },    {{U'A', U'A'},  4108      },  {{U'F', U'F'},  4108      },    
+    	{{U'X', U'X'},  140       },    {{U'_', U'_'},  12        },  {{U'd', U'd'},  528412    },    
+    	{{U'i', U'j'},  28        },    {{U'o', U'o'},  540       },  {{U'q', U'q'},  524300    },    
+    	{{U'v', U'w'},  12        },    {{U'y', U'z'},  12        },  {{U'Ё', U'Ё'},  12        },  
+    	{{U'ё', U'ё'},  12        },  	{{   1,   32},  1         },  {{U'"', U'"'},  64        },    
+    	{{U'%', U'&'},  32        },    {{U'(', U'*'},  32        },  {{U',', U','},  32        },    
+    	{{U'.', U'.'},  2097152   },    {{U'0', U'0'},  126984    },  {{U'2', U'7'},  1093640   },    
+    	{{U':', U'>'},  32        },    {{U'B', U'B'},  4364      },  {{U'E', U'E'},  135180    },    
+    	{{U'G', U'N'},  12        },    {{U'P', U'W'},  12        },  {{U'Y', U'Z'},  12        },    
+    	{{U']', U'^'},  32        },    {{U'a', U'a'},  4124      },  {{U'c', U'c'},  4124      },    
+    	{{U'e', U'e'},  135180    },    {{U'g', U'h'},  12        },  {{U'k', U'k'},  12        }
+};
     static constexpr size_t   num_of_elems_in_categories_table = size(categories_table);
     static constexpr uint64_t other_as_int = static_cast<uint64_t>(Category::Other);
 
@@ -210,7 +209,7 @@ namespace mur128m_scanner{
     }
 
     /**
-     * A regular expression for numbers of the programming language Рысь can be written
+     * A regular expression for numbers of the programming language МУР128 can be written
      * in the form
      *    abc(d?c)* | (a|e)(d?(a|e))*(f(a|e)(d?(a|e))*)?(gh?(a|e)(d?(a|e))*)?j?i?   (1)
      * where
@@ -334,14 +333,8 @@ namespace mur128m_scanner{
         "Error at %zu:%zu: expected !||\n";
     static const char* expected_logical_and_not         =
         "Error at %zu:%zu: expected !&&\n";
-    static const char* expected_component               =
-        "Error at %zu:%zu: expected {..}\n";
     static const char* expected_component_or            =
         "Error at %zu:%zu: expected .|.\n";
-    static const char* unexpected_mark_of_comment_end   =
-        "Error at %zu:%zu: unexpected mark of comment end (i.e. */)\n";
-    static const char* unexpected_end_of_comment        =
-        "Error at %zu:%zu: unexpected end of comment.\n";
     static const char* expected_digit_of_char_code      =
         "Error at %zu:%zu: expected a digit of a character code.\n";
     static const char* expected_quote                   =
@@ -350,9 +343,9 @@ namespace mur128m_scanner{
         "Error at %zu:%zu: unexpected end of a character literal.\n";
     static const char* unexpected_end_of_string_literal =
         "Error at %zu:%zu: unexpected end of a string literal.\n";
-//     static const char* unexpected_char_in_char_code   =
-//         "Error at %zu:%zu: unexpected character in character code at "
-//         "processing of string literal.\n";
+    static const char* unexpected_char_in_char_code   =
+        "Error at %zu:%zu: unexpected character in character code at "
+        "processing of string literal.\n";
 
     template<typename... T>
     static void print_diagnostic(const char* msg, T... args)
@@ -743,7 +736,7 @@ namespace mur128m_scanner{
     }
 
     /**
-     * A regular expression for quoted string literals of the programming language Рысь
+     * A regular expression for quoted string literals of the programming language МУР128
      * can be written in the form
      *     g(h|gg)*g, (0)
      * where
@@ -880,7 +873,7 @@ namespace mur128m_scanner{
 
     /**
      *
-     * A regular expression for quoted character literals of the programming language Рысь
+     * A regular expression for quoted character literals of the programming language МУР128
      * can be written in the form
      *     d(i|dd)d, (1)
      * where
@@ -1486,9 +1479,6 @@ namespace mur128m_scanner{
     void Scanner::comment_final_proc()
     {
         if(comment_level_ > 0){
-            print_diagnostic(unexpected_end_of_comment,
-                             loc_->pos_.line_no_,
-                             loc_->pos_.line_pos_);
             en_->increment_number_of_errors();
             token_.lexeme_.code_      = Lexem_code::Nothing;
         }
@@ -1584,13 +1574,22 @@ namespace mur128m_scanner{
 
     static const std::string code_names[] = {
         "Nothing",                     "UnknownLexem",
-        "Section",                     "Readable",
-        "Writable",                    "Executable",
+        "KwSection",                   "KwReadable",
+        "KwWritable",                  "KwExecutable",
         "Id",                          "Integer",
+        "KwFloat32",                   "KwFloat64",
+        "KwFloat80",                   "KwFloat128",
+	"KwInt32",                     "KwInt64",
+        "KwInt128",		       "KwInt8",
+	"KwInt16",		       "KwUInt32",
+        "KwUInt64",		       "KwUInt128",
+	"KwUInt8",		       "KwUInt16",
         "Float32",                     "Float64",
         "Float80",                     "Float128",
         "Complex32",                   "Complex64",
         "Complex80",                   "Complex128",
+	"KwComplex32",                 "KwComplex64",
+        "KwComplex80",                 "KwComplex128",
         "String",                      "Char",
         "Sq_br_opened",                "Round_br_opened",
         "Sq_br_closed",                "Round_br_closed",
@@ -1602,7 +1601,9 @@ namespace mur128m_scanner{
         "Remainder",                   "Bitwise_or",
         "Bitwise_and",                 "Greater_than",
         "Right_shift",                 "Curly_brace_opened",
-        "Curly_brace_closed",          "Comma"
+        "Curly_brace_closed",          "Comma",
+	"Register",		       "KwChar",
+	"KwFormat",		       "KwString"
     };
 
     std::string Scanner::lexeme_to_string(const mur128m_scanner::Lexeme_info& li)
