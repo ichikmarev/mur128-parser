@@ -5,7 +5,7 @@
 
 #ifndef LR_TRAITS_H
 #define LR_TRAITS_H
-#include "../include/myconcepts.h"
+
 template<typename Lexem_type>
 struct Attributes{
     union{

@@ -12,40 +12,19 @@
 #include "../include/expr_traits.h"
 
 static const Terminal lexem2terminal_map[] = {
-    Terminal::End_of_text, Terminal::End_of_text, Terminal::Term_a,
-    Terminal::Term_LP,     Terminal::Term_RP,     Terminal::Term_b,
-    Terminal::Term_c,      Terminal::Term_c,      Terminal::Term_c,
-    Terminal::Term_d,      Terminal::Term_p,      Terminal::Term_q,
-    Terminal::Term_d,      Terminal::Term_d
+    Terminal::End_of_text, Terminal::Term_ri,  Terminal::Term_fi,
+    Terminal::Term_sp, Terminal::Term_bp, Terminal::Term_mi, Terminal::Term_lr,
+    Terminal::Term_srf, Terminal::Term_lrf, Terminal::Term_p, Terminal::Term_a3f,
+    Terminal::Term_a2f, Terminal::Term_m2f, Terminal::Term_jr1, Terminal::Term_jr2,
+    Terminal::Term_jc, Terminal::Term_jcr, Terminal::Term_crl, Terminal::Term_clc,
+    Terminal::Term_r, Terminal::Term_ra, Terminal::Term_rc, Terminal::Term_d,
+    Terminal::Term_p, Terminal::Term_i
 };
 
 Terminal SLR_act_expr_parser::lexem2terminal(const Expr_lexem_info& l)
 {
     return lexem2terminal_map[static_cast<uint16_t>(l.code)];
 }
-
-/* Grammar rules:
- *
- * -------------------------------------------
- * | Rule number | Rule       | Rule name    |
- * |------------------------------------------
- * | (0)         | S -> pTq   | S_is_pTq     |
- * | (1)         | T -> TbE   | T_is_TbE     |
- * | (2)         | T -> E     | T_is_E       |
- * | (3)         | E -> EF    | E_is_EF      |
- * | (4)         | E -> F     | E_is_F       |
- * | (5)         | F -> Gc    | F_is_Gc      |
- * | (6)         | F -> G     | F_is_G       |
- * | (7)         | G -> Ha    | G_is_Ha      |
- * | (8)         | G -> H     | G_is_H       |
- * | (9)         | H -> d     | H_is_d       |
- * | (10)        | H -> (T)   | H_is_LP_T_RP |
- * ---------------------------------------------
- *
- * In this grammar, a means $action_name, b means the operator |, c means unary
- * operators ? * +, d means a character or a character class, p means { (opening
- * curly bracket), q means } (closing curly bracket).
- */
 
 static const char* opening_curly_brace_is_expected =
     "An opening curly brace is expected at line %zu.\n";
@@ -73,38 +52,38 @@ static const char* or_operator_or_round_br_closed =
     "An operator | or closing parenthesis are expected at line %zu.\n";
 
 SLR_act_expr_parser::Attrib_calculator SLR_act_expr_parser::attrib_calculator[] = {
-    &SLR_act_expr_parser::attrib_by_S_is_pTq,
-    &SLR_act_expr_parser::attrib_by_T_is_TbE,
-    &SLR_act_expr_parser::attrib_by_T_is_E,
-    &SLR_act_expr_parser::attrib_by_E_is_EF,
-    &SLR_act_expr_parser::attrib_by_E_is_F,
-    &SLR_act_expr_parser::attrib_by_F_is_Gc,
-    &SLR_act_expr_parser::attrib_by_F_is_G,
-    &SLR_act_expr_parser::attrib_by_G_is_Ha,
-    &SLR_act_expr_parser::attrib_by_G_is_H,
-    &SLR_act_expr_parser::attrib_by_H_is_d,
-    &SLR_act_expr_parser::attrib_by_H_is_LP_T_RP
+    &SLR_act_expr_parser::attrib_by_P_is_B_E,
+    &SLR_act_expr_parser::attrib_by_B_is_S,
+    &SLR_act_expr_parser::attrib_by_E_is_i,
+    &SLR_act_expr_parser::attrib_by_S_is_At_SB,
+    &SLR_act_expr_parser::attrib_by_SB_is_R_C,
+    &SLR_act_expr_parser::attrib_by_R_is_ri_fi_sp_bp,
+    &SLR_act_expr_parser::attrib_by_C_is_srf,
+    &SLR_act_expr_parser::attrib_by_C_is_lrf,
+    &SLR_act_expr_parser::attrib_by_C_is_p,
+    &SLR_act_expr_parser::attrib_by_C_is_a3f,
+    &SLR_act_expr_parser::attrib_by_C_is_a3r
 };
 
 SLR_act_expr_parser::Error_handler SLR_act_expr_parser::error_hadler[] = {
-    &SLR_act_expr_parser::state00_error_handler, // 0  +
-    &SLR_act_expr_parser::state01_error_handler, // 1  +
-    &SLR_act_expr_parser::state02_error_handler, // 2  +
-    &SLR_act_expr_parser::state03_error_handler, // 3  +
-    &SLR_act_expr_parser::state04_error_handler, // 4  +
-    &SLR_act_expr_parser::state04_error_handler, // 5  +
-    &SLR_act_expr_parser::state06_error_handler, // 6  +
-    &SLR_act_expr_parser::state07_error_handler, // 7  +
-    &SLR_act_expr_parser::state07_error_handler, // 8  +
-    &SLR_act_expr_parser::state02_error_handler, // 9  +
-    &SLR_act_expr_parser::state02_error_handler, // 10 +
-    &SLR_act_expr_parser::state11_error_handler, // 11 +
-    &SLR_act_expr_parser::state04_error_handler, // 12 +
-    &SLR_act_expr_parser::state04_error_handler, // 13 +
-    &SLR_act_expr_parser::state06_error_handler, // 14 +
-    &SLR_act_expr_parser::state15_error_handler, // 15 +
-    &SLR_act_expr_parser::state04_error_handler, // 16 +
-    &SLR_act_expr_parser::state07_error_handler  // 17 +
+    &SLR_act_expr_parser::state00_error_handler, 
+    &SLR_act_expr_parser::state01_error_handler, 
+    &SLR_act_expr_parser::state02_error_handler, 
+    &SLR_act_expr_parser::state03_error_handler, 
+    &SLR_act_expr_parser::state04_error_handler, 
+    &SLR_act_expr_parser::state04_error_handler, 
+    &SLR_act_expr_parser::state06_error_handler, 
+    &SLR_act_expr_parser::state07_error_handler, 
+    &SLR_act_expr_parser::state07_error_handler, 
+    &SLR_act_expr_parser::state02_error_handler, 
+    &SLR_act_expr_parser::state02_error_handler, 
+    &SLR_act_expr_parser::state11_error_handler, 
+    &SLR_act_expr_parser::state04_error_handler,
+    &SLR_act_expr_parser::state04_error_handler, 
+    &SLR_act_expr_parser::state06_error_handler, 
+    &SLR_act_expr_parser::state15_error_handler, 
+    &SLR_act_expr_parser::state04_error_handler,
+    &SLR_act_expr_parser::state07_error_handler 
 };
 
 /* In this array, the rules are collected for which reduce is performed in
@@ -114,13 +93,13 @@ SLR_act_expr_parser::Error_handler SLR_act_expr_parser::error_hadler[] = {
  * index is (-1). */
 static const char reduce_rules[] = {
     -1,       -1,          -1,      -1,
-    T_is_E,   E_is_F,      F_is_G,  G_is_H,
-    H_is_d,   -1,          -1,      S_is_pTq,
-    E_is_EF,  F_is_Gc,     G_is_Ha, -1,
-    T_is_TbE, H_is_LP_T_RP
+    P_is_B_E,   B_is_S,      E_is_i,  S_is_At_SB,
+    SB_is_R_C,   -1,          -1,      R_is_ri_fi_sp_bp,
+    C_is_srf,  C_is_p,     C_is_a3f, -1,
+    C_is_a3r
 };
 
-void SLR_act_expr_parser::generate_E_is_EF()
+void SLR_act_expr_parser::generate_P_is_B_E()
 {
     Command com;
     com.name        = Command_name::Concat;
@@ -130,7 +109,7 @@ void SLR_act_expr_parser::generate_E_is_EF()
     buf_.push_back(com);
 }
 
-void SLR_act_expr_parser::generate_by_F_is_Gc()
+void SLR_act_expr_parser::generate_by_B_is_S()
 {
     Command com;
     switch(rule_body[1].attr.li.code){
@@ -152,7 +131,7 @@ void SLR_act_expr_parser::generate_by_F_is_Gc()
     buf_.push_back(com);
 }
 
-void SLR_act_expr_parser::generate_by_H_is_d()
+void SLR_act_expr_parser::generate_by_E_is_i()
 {
     Command com;
     switch(rule_body[0].attr.li.code){
@@ -208,7 +187,7 @@ void SLR_act_expr_parser::generate_by_G_is_Ha()
     }
 }
 
-void SLR_act_expr_parser::generate_by_T_is_TbE()
+void SLR_act_expr_parser::generate_by_S_is_At_SB()
 {
     Command com;
     com.name        = Command_name::Or;

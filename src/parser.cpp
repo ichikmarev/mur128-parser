@@ -35,45 +35,8 @@ namespace parser{
 
         mur128m_ir::Command                          buffer_;
 
-        /**
-         * Processing of all rules of a grammar of the programming language Рысь
-         * is performed by the method of recursive descent.
-         */
         void program();
     };
-
-    /**
-     * The function void Parser::Impl::program() processes the following rule
-     * of a grammar of the programming language Рысь:
-     *      program -> Kw_modul Id Curly_brace_opened block_body Curly_brace_closed
-     * Hence, this rule can be written as the following regexp:
-     *      program -> abcde
-     * where
-     *     a Kw_modul
-     *     b Id
-     *     c Curly_brace_opened
-     *     d block_body
-     *     e Curly_brace_closed
-     *
-     * Minimal DFA for this regexp:
-     *
-     * |-------|---|---|---|---|---|----------------|
-     * | State | a | b | c | d | e |    Remark      |
-     * |-------|---|---|---|---|---|----------------|
-     * |   A   | B |   |   |   |   | Initial state. |
-     * |-------|---|---|---|---|---|----------------|
-     * |   B   |   | C |   |   |   |                |
-     * |-------|---|---|---|---|---|----------------|
-     * |   C   |   |   | D |   |   |                |
-     * |-------|---|---|---|---|---|----------------|
-     * |   D   |   |   |   | E |   |                |
-     * |-------|---|---|---|---|---|----------------|
-     * |   E   |   |   |   |   | F |                |
-     * |-------|---|---|---|---|---|----------------|
-     * |   F   |   |   |   |   |   | Final state.   |
-     * |-------|---|---|---|---|---|----------------|
-     *
-     */
 
     enum class Program_state{
         A, B, C, D, E, F
